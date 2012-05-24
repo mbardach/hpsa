@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  theme_code: MyString
+  theme_description: MyString
+  theme_private_field: MyString
+
+two:
+  theme_code: MyString
+  theme_description: MyString
+  theme_private_field: MyString

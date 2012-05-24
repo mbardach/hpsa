@@ -1,0 +1,15 @@
+<%= simple_form_for @quote_detail, :html => { :class => 'form-horizontal' } do |f| %>
+  
+	<%= f.association :quote,  :label_method => :comment %>
+	
+	<%= f.association :course,  :label_method => :course_title %>
+	<%= f.association :user,  :label_method => :full_name %>
+
+	<%= f.input :status, :collection => ['Requested', 'Waiting Manager', 'Authorised', 'Planned','Excuses','Present','Absent'] %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                quote_details_path, :class => 'btn' %>
+  </div>
+<% end %>

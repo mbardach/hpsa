@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  training_start_date: 2012-04-15
+  training_end_date: 2012-04-15
+  origin: MyString
+  description: MyString
+  location_idi: 1
+  user_id: 1
+  language: MyString
+  expected_duration: 9.99
+  effective_duration: 9.99
+  duration_unit: MyString
+  planned_participants: 1
+  effective_participants: 1
+  status: MyString
+
+two:
+  training_start_date: 2012-04-15
+  training_end_date: 2012-04-15
+  origin: MyString
+  description: MyString
+  location_idi: 1
+  user_id: 1
+  language: MyString
+  expected_duration: 9.99
+  effective_duration: 9.99
+  duration_unit: MyString
+  planned_participants: 1
+  effective_participants: 1
+  status: MyString

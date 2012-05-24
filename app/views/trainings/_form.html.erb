@@ -1,0 +1,92 @@
+<%= form_for @training, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :course_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :course_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :training_start_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :training_start_date, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :training_end_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :training_end_date, :class => 'date_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :origin, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :origin, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :description, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :location_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :location_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :user_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :language, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :language, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :expected_duration, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :expected_duration, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :effective_duration, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :effective_duration, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :duration_unit, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :duration_unit, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :planned_participants, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :planned_participants, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :effective_participants, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :effective_participants, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :status, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :status, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                trainings_path, :class => 'btn' %>
+  </div>
+<% end %>

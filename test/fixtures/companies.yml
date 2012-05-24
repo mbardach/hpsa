@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  code: MyString
+  name: MyString
+  relationship: MyString
+  currency_id: 1
+  language: MyString
+  contact_principal_id: 1
+  sales_contact_id: 1
+  blocker: false
+  phone: MyString
+  email: MyString
+  weekend_day_1: 1
+  weekend_day_2: 1
+  management_flag: false
+  memo: MyText
+
+two:
+  code: MyString
+  name: MyString
+  relationship: MyString
+  currency_id: 1
+  language: MyString
+  contact_principal_id: 1
+  sales_contact_id: 1
+  blocker: false
+  phone: MyString
+  email: MyString
+  weekend_day_1: 1
+  weekend_day_2: 1
+  management_flag: false
+  memo: MyText

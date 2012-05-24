@@ -1,0 +1,14 @@
+<%= simple_form_for @program_course, :html => { :class => 'form-horizontal' } do |f| %>
+
+	<%= f.association :program,  :label_method => :program_title %>
+	<%= f.input :program_course_order %>
+	<%= f.association :course,  :label_method => :course_title %>
+	<%= f.input :duration %>
+	<%= f.input :unit %>
+	<%= f.input :description, :input_html => { :cols => 30, :rows=> 10 }, :as => :text %>
+    <div class="form-actions">
+       <%= f.submit nil, :class => 'btn btn-primary' %>
+       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                program_courses_path, :class => 'btn' %>
+    </div>
+<% end %>

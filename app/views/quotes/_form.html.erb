@@ -1,0 +1,21 @@
+<%= simple_form_for @quote, :html => { :class => 'form-horizontal' } do |f| %>
+ 
+ <%= f.input :requested_date, :as => :date, :start_year => Date.today.year,
+                              :end_year => Date.today.year,
+                              :order => [:day, :month, :year] %>
+<%= f.association :user,  :label_method => :full_name %>
+<%= f.input :status, :collection => ['Requested', 'Waiting Manager', 'Authorised', 'Planned'] %>
+<%= f.association :company,  :label_method => :code %>
+<%= f.input :origin, :collection => ['Project','Internal','Customer Sale'] %>
+<%= f.input :comment, :input_html => { :cols => 30, :rows=> 10 }, :as => :text %>
+<%= f.input :delay, :collection => ['Trimestre 1','Trimestre 2','Trimestre 3','Trimestre 4'] %>
+<%= f.input :latest_by_date, :as => :date, :start_year => Date.today.year,
+                             :end_year => Date.today.year,
+                             :order => [:day, :month, :year] %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                quotes_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,75 @@
+<%- model_class = @company.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:code) %>:</strong><br>
+  <%= @company.code %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
+  <%= @company.name %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:relationship) %>:</strong><br>
+  <%= @company.relationship %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:currency_id) %>:</strong><br>
+  <%= @company.currency_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:language) %>:</strong><br>
+  <%= @company.language %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:contact_principal_id) %>:</strong><br>
+  <%= @company.contact_principal_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:sales_contact_id) %>:</strong><br>
+  <%= @company.sales_contact_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:country_id) %>:</strong><br>
+  <%= @company.country_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:blocked) %>:</strong><br>
+  <%= @company.blocked %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:phone) %>:</strong><br>
+  <%= @company.phone %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:email) %>:</strong><br>
+  <%= @company.email %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:weekend_day_1) %>:</strong><br>
+  <%= @company.weekend_day_1 %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:weekend_day_2) %>:</strong><br>
+  <%= @company.weekend_day_2 %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:management_flag) %>:</strong><br>
+  <%= @company.management_flag %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:memo) %>:</strong><br>
+  <%= @company.memo %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              companies_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_company_path(@company), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              company_path(@company),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

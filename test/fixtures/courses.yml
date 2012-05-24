@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  course_code: MyString
+  course_title: MyString
+  course_introduction: MyString
+  course_description: MyString
+  course_training_material_ref: MyString
+  course_planned_duration: MyString
+  decimal: MyString
+  subject_id: 1
+  course_status: MyString
+  course_audience: MyString
+  company_id: 1
+  course_order: 1
+  course_type: MyString
+
+two:
+  course_code: MyString
+  course_title: MyString
+  course_introduction: MyString
+  course_description: MyString
+  course_training_material_ref: MyString
+  course_planned_duration: MyString
+  decimal: MyString
+  subject_id: 1
+  course_status: MyString
+  course_audience: MyString
+  company_id: 1
+  course_order: 1
+  course_type: MyString

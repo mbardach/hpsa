@@ -1,0 +1,2 @@
+module QuoteDetailsHelper
+end

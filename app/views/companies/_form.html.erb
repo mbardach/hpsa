@@ -1,0 +1,24 @@
+<%= simple_form_for @company, :html => { :class => 'form-horizontal' } do |f| %>
+
+<%= f.input :code %>
+<%= f.input :name %>
+  <%= f.input :relationship, :collection => [  'Client','Partner','Internal'], :as => :radio, :label => 'Relationship'%>
+<%= f.input :currency_id %>
+<%= f.input :language %>
+<%= f.input :sales_contact_id %>
+<%= f.input :contact_principal_id %>
+<%= f.input :country_id %>
+<%= f.input :blocked, :as => :boolean%>
+<%= f.input :phone %>
+<%= f.input :email %>
+<%= f.input :weekend_day_1, :collection => 1..7 %>
+<%= f.input :weekend_day_2, :collection => 1..7  %>
+<%= f.check_box :management_flag %>
+<%= f.text_area :memo %>
+	
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                companies_path, :class => 'btn' %>
+  </div>
+<% end %>

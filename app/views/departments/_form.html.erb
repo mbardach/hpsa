@@ -1,0 +1,14 @@
+<%= simple_form_for @department, :html => { :class => 'form-horizontal' } do |f| %>
+
+	<%= f.association :company,  :label_method => :code %>
+	<%= f.input :level_1 %>
+	<%= f.input :level_2 %>
+  	<%= f.input :department %>
+  	<%= f.input :hierarchy_level %>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                departments_path, :class => 'btn' %>
+  </div>
+<% end %>

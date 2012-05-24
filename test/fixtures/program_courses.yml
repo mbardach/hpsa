@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  course_id: 1
+  program_id: 1
+  duration: 9.99
+  unit: MyString
+  program_course_order: 1
+  description: MyString
+
+two:
+  course_id: 1
+  program_id: 1
+  duration: 9.99
+  unit: MyString
+  program_course_order: 1
+  description: MyString

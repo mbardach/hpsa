@@ -1,0 +1,67 @@
+<%- model_class = @course.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:course_code) %>:</strong><br>
+  <%= @course.course_code %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:course_title) %>:</strong><br>
+  <%= @course.course_title %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:course_introduction) %>:</strong><br>
+  <%= @course.course_introduction %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:course_description) %>:</strong><br>
+  <%= @course.course_description %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:course_training_material_ref) %>:</strong><br>
+  <%= @course.course_training_material_ref %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:course_planned_duration) %>:</strong><br>
+  <%= @course.course_planned_duration %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:decimal) %>:</strong><br>
+  <%= @course.decimal %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:subject_id) %>:</strong><br>
+  <%= @course.subject_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:course_status) %>:</strong><br>
+  <%= @course.course_status %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:course_audience) %>:</strong><br>
+  <%= @course.course_audience %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:company_id) %>:</strong><br>
+  <%= @course.company_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:course_order) %>:</strong><br>
+  <%= @course.course_order %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:course_type) %>:</strong><br>
+  <%= @course.course_type %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              courses_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_course_path(@course), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              course_path(@course),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

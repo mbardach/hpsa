@@ -1,0 +1,35 @@
+<%- model_class = @subject.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:subject_code) %>:</strong><br>
+  <%= @subject.subject_code %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:subject_description) %>:</strong><br>
+  <%= @subject.subject_description %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:audience) %>:</strong><br>
+  <%= @subject.audience %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:company_id) %>:</strong><br>
+  <%= @subject.company_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:module_group_id) %>:</strong><br>
+  <%= @subject.module_group_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              subjects_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_subject_path(@subject), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              subject_path(@subject),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

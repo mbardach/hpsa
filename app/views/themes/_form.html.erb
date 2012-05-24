@@ -1,0 +1,16 @@
+<%= simple_form_for @theme, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :theme_code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :theme_code, :class => 'text_field' %>
+    </div>
+  </div>
+  <%= f.input :theme_description%>
+  <%= f.input :theme_private_field%>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                themes_path, :class => 'btn' %>
+  </div>
+<% end %>

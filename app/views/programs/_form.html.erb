@@ -1,0 +1,19 @@
+<%= simple_form_for @program, :html => { :class => 'form-horizontal' } do |f| %>
+  
+	<%= f.input :program_code %>
+	<%= f.input :program_title %>
+	<%= f.input :program_order %>
+	<%= f.input :program_description, :input_html => { :cols => 30, :rows=> 10 }, :as => :text %>
+ 	<%= f.input :program_audience, :collection => ['Public', 'Private', 'Partner'], :as => :radio, :label => 'Audience'%>
+  	<%= f.association :company,  :label_method => :code%>
+  	<%= f.input :program_status, :collection => ['Available', 'Discontinued'], :as => :radio %>
+	<%= f.input :program_duration %>
+  	<%= f.input :program_unit, :collection => ['Days', 'Hours'] %>
+	
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                programs_path, :class => 'btn' %>
+  </div>
+<% end %>

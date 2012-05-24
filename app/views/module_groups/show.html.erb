@@ -1,0 +1,35 @@
+<%- model_class = @module_group.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:module_group_code) %>:</strong><br>
+  <%= @module_group.module_group_code %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:module_group_description) %>:</strong><br>
+  <%= @module_group.module_group_description %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:audience) %>:</strong><br>
+  <%= @module_group.audience %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:company_id) %>:</strong><br>
+  <%= @module_group.company_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:theme_id) %>:</strong><br>
+  <%= @module_group.theme_id %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              module_groups_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_module_group_path(@module_group), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              module_group_path(@module_group),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

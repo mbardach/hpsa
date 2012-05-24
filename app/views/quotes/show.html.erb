@@ -1,0 +1,47 @@
+<%- model_class = @quote.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:requested_date) %>:</strong><br>
+  <%= @quote.requested_date %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:user_id) %>:</strong><br>
+  <%= @quote.user_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:status) %>:</strong><br>
+  <%= @quote.status %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:company_id) %>:</strong><br>
+  <%= @quote.company_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:origin) %>:</strong><br>
+  <%= @quote.origin %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:comment) %>:</strong><br>
+  <%= @quote.comment %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:delay) %>:</strong><br>
+  <%= @quote.delay %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:latest_by_date) %>:</strong><br>
+  <%= @quote.latest_by_date %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              quotes_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_quote_path(@quote), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              quote_path(@quote),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

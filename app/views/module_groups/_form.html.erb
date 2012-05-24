@@ -1,0 +1,13 @@
+<%= simple_form_for @module_group, :html => { :class => 'form-horizontal' } do |f| %>
+ 
+		<%= f.input :module_group_code %>
+		<%= f.input :module_group_description %>
+		<%= f.input :audience, :collection => ['Public', 'Private', 'Partner'], :as => :radio, :label => 'Audience'%>
+		<%= f.association :company,  :label_method => :code %>
+		<%= f.association :theme,  :label_method => :theme_code %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                module_groups_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -1,0 +1,35 @@
+<%- model_class = @department.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:company_id) %>:</strong><br>
+  <%= @department.company_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:level_1) %>:</strong><br>
+  <%= @department.level_1 %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:level_2) %>:</strong><br>
+  <%= @department.level_2 %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:department) %>:</strong><br>
+  <%= @department.department %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:hierarchy_level) %>:</strong><br>
+  <%= @department.hierarchy_level %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              departments_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_department_path(@department), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              department_path(@department),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

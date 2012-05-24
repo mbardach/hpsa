@@ -1,0 +1,43 @@
+<%- model_class = ProgramCourse.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Order </th>
+ 	  <th><%= model_class.human_attribute_name(:program_id) %></th>
+      <th><%= model_class.human_attribute_name(:course_id) %></th>
+      <th><%= model_class.human_attribute_name(:course_id) %></th>
+      <th><%= model_class.human_attribute_name(:duration) %></th>
+      <th><%= model_class.human_attribute_name(:unit) %></th>
+
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @program_courses.each do |program_course| %>
+      <tr>
+        <td><%= program_course.program_course_order %></td>
+        <td><%= program_course.program.program_title %></td>
+        <td><%= link_to program_course.course.course_code, program_course_path(program_course)  %></td>
+        <td><%= program_course.course.course_title %></td>
+        <td><%= program_course.duration %></td>
+        <td><%= program_course.unit %></td>
+        <td><%= program_course.description %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_program_course_path(program_course), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      program_course_path(program_course),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_program_course_path,
+            :class => 'btn btn-primary' %>

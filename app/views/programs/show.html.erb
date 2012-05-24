@@ -1,0 +1,51 @@
+<%- model_class = @program.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:program_code) %>:</strong><br>
+  <%= @program.program_code %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:program_title) %>:</strong><br>
+  <%= @program.program_title %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:program_order) %>:</strong><br>
+  <%= @program.program_order %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:program_description) %>:</strong><br>
+  <%= @program.program_description %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:program_audience) %>:</strong><br>
+  <%= @program.program_audience %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:company_id) %>:</strong><br>
+  <%= @program.company_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:program_status) %>:</strong><br>
+  <%= @program.program_status %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:program_duration) %>:</strong><br>
+  <%= @program.program_duration %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:program_unit) %>:</strong><br>
+  <%= @program.program_unit %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              programs_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_program_path(@program), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              program_path(@program),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

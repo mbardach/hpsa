@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  program_code: MyString
+  program_title: MyString
+  program_order: MyString
+  program_description: MyString
+  program_audience: MyString
+  company_id: 1
+  program_status: MyString
+  program_duration: 9.99
+
+two:
+  program_code: MyString
+  program_title: MyString
+  program_order: MyString
+  program_description: MyString
+  program_audience: MyString
+  company_id: 1
+  program_status: MyString
+  program_duration: 9.99

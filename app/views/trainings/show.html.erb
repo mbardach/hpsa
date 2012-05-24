@@ -1,0 +1,71 @@
+<%- model_class = @training.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:course_id) %>:</strong><br>
+  <%= @training.course_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:training_start_date) %>:</strong><br>
+  <%= @training.training_start_date %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:training_end_date) %>:</strong><br>
+  <%= @training.training_end_date %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:origin) %>:</strong><br>
+  <%= @training.origin %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:description) %>:</strong><br>
+  <%= @training.description %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:location_id) %>:</strong><br>
+  <%= @training.location_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:user_id) %>:</strong><br>
+  <%= @training.user_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:language) %>:</strong><br>
+  <%= @training.language %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:expected_duration) %>:</strong><br>
+  <%= @training.expected_duration %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:effective_duration) %>:</strong><br>
+  <%= @training.effective_duration %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:duration_unit) %>:</strong><br>
+  <%= @training.duration_unit %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:planned_participants) %>:</strong><br>
+  <%= @training.planned_participants %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:effective_participants) %>:</strong><br>
+  <%= @training.effective_participants %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:status) %>:</strong><br>
+  <%= @training.status %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              trainings_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_training_path(@training), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              training_path(@training),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

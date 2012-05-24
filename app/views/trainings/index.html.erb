@@ -1,0 +1,60 @@
+<%- model_class = Training.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:course_id) %></th>
+      <th><%= model_class.human_attribute_name(:training_start_date) %></th>
+      <th><%= model_class.human_attribute_name(:training_end_date) %></th>
+      <th><%= model_class.human_attribute_name(:origin) %></th>
+      <th><%= model_class.human_attribute_name(:description) %></th>
+      <th><%= model_class.human_attribute_name(:location_id) %></th>
+      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <th><%= model_class.human_attribute_name(:language) %></th>
+      <th><%= model_class.human_attribute_name(:expected_duration) %></th>
+      <th><%= model_class.human_attribute_name(:effective_duration) %></th>
+      <th><%= model_class.human_attribute_name(:duration_unit) %></th>
+      <th><%= model_class.human_attribute_name(:planned_participants) %></th>
+      <th><%= model_class.human_attribute_name(:effective_participants) %></th>
+      <th><%= model_class.human_attribute_name(:status) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @trainings.each do |training| %>
+      <tr>
+        <td><%= link_to training.id, training_path(training) %></td>
+        <td><%= training.course_id %></td>
+        <td><%= training.training_start_date %></td>
+        <td><%= training.training_end_date %></td>
+        <td><%= training.origin %></td>
+        <td><%= training.description %></td>
+        <td><%= training.location_id %></td>
+        <td><%= training.user_id %></td>
+        <td><%= training.language %></td>
+        <td><%= training.expected_duration %></td>
+        <td><%= training.effective_duration %></td>
+        <td><%= training.duration_unit %></td>
+        <td><%= training.planned_participants %></td>
+        <td><%= training.effective_participants %></td>
+        <td><%= training.status %></td>
+        <td><%=l training.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_training_path(training), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      training_path(training),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_training_path,
+            :class => 'btn btn-primary' %>
